@@ -1,0 +1,5 @@
+bsdconvmv conversion [arguments] files...
+	Arguments:
+	-r: recursive
+	--notest: actually rename the files
+	--noskip: disregard of conversion error
