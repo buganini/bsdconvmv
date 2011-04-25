@@ -35,6 +35,7 @@ def pathsplit(p):
 def usage():
 	print sys.argv[0], "conversion [arguments] files..."
 	print "Arguments:"
+	print "-r: resursive"
 	print "--notest: actually rename the files"
 	print "--noskip: disregard of conversion error"
 
