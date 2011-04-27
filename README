@@ -3,3 +3,7 @@ bsdconvmv conversion [arguments] files...
 	-r: recursive
 	--notest: actually rename the files
 	--noskip: disregard of conversion error
+
+Note:
+	For multiple directories containing link to file/dir in others,
+	proceed them together, bsdconvmv will just deal with it as you wish.
