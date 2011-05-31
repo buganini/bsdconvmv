@@ -27,7 +27,7 @@ def absrealpath(p):
 
 def pathsplit(p):
 	d,p=os.path.splitdrive(p)
-	r=re.findall("([^/]+|[\\/]+)",p)
+	r=re.findall("([^\\/]+|[\\/]+)",p)
 	if(d):
 		r.insert(0,d)
 	return r
