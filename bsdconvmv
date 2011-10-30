@@ -56,8 +56,8 @@ def proc(d):
 			proc(os.path.join(d,i))
 	path=os.path.dirname(d)
 	name=os.path.basename(d)
-	newname=bsdconv.conv(p,name)
-	err=bsdconv.info(p)['ierr']+bsdconv.info(p)['oerr']
+	newname=p.conv(name)
+	err=p.info()['ierr']+p.info()['oerr']
 	if err>0 and skiparg:
 		skip=True
 		skipstr='[SKIP] '
@@ -73,7 +73,7 @@ def proc(d):
 			j=''.join(src[0:i])
 			if pathmeaningful(src[i-1]) and inzone(j):
 				last=j
-				newsrc.append(bsdconv.conv(p, src[i-1]))
+				newsrc.append(p.conv(src[i-1]))
 			else:
 				newsrc.append(src[i-1])
 		src=''.join(src)
@@ -96,9 +96,10 @@ if len(sys.argv)<3:
 	usage()
 	sys.exit()
 
-p=bsdconv.create(sys.argv[1])
-if p==None:
-        print bsdconv.error()
+p=bsdconv.new(sys.argv[1])
+if not p:
+        print p.error()
+	del p
         sys.exit()
 
 cwd=os.getcwd()
@@ -128,4 +129,5 @@ for item in zone:
 
 if testarg:
 	print "\nUse --notest to actually rename the files"
-bsdconv.destroy(p)
+
+del p
