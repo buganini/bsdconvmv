@@ -96,7 +96,7 @@ if len(sys.argv)<3:
 	usage()
 	sys.exit()
 
-p=bsdconv.new(sys.argv[1])
+p=bsdconv.Bsdconv(sys.argv[1])
 if not p:
         print p.error()
 	del p
