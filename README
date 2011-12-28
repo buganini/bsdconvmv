@@ -7,3 +7,6 @@ bsdconvmv conversion [arguments] files...
 Note:
 	For multiple directories containing link to file/dir in others,
 	proceed them together, bsdconvmv will just deal with it as you wish.
+
+Todo:
+	collision detection
